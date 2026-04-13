@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login Page</title>
+    <style>
+        body { font-family: Arial; background:#f4f8fb; padding:40px; }
+        .box { max-width:500px; margin:auto; background:white; padding:25px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); }
+        input { width:100%; padding:10px; margin:8px 0; }
+        button { background:#0d6efd; color:white; border:none; padding:10px 16px; border-radius:8px; }
+        h2 { color:#0d6efd; }
+        .custom { color:#666; font-size:14px; }
+        .error { color:red; }
+    </style>
+</head>
+<body>
+<div class="box">
+    <h2>Login Website Mahasiswa</h2>
+    <p class="custom">Tugas Deploy - NAMA KAMU | NIM_KAMU</p>
+
+    <form action="/login" method="post">
+        <label>Username</label>
+        <input type="text" name="username" required>
+
+        <label>Password</label>
+        <input type="password" name="password" required>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <p class="error" th:text="${error}"></p>
+</div>
+</body>
+</html>
